@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ModalForm } from './ModalForm';
 import { Button } from 'antd';
+import { Header } from 'antd/es/layout/layout'
 
-export const Header = () => {
+
+export const Head = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const backgroundColor = { backgroundColor: '#fff' }
 

@@ -6,24 +6,24 @@ export const InitialStore = {
         },
         songList: [
             {
-                name: "Yaad Valam Ni Aave",
-                audioLink: "https://cdn.jattpendu.com/download/128k-wslxc/Yaad-Valam-Ni-Aave.mp3",
-                source: "pendu jaat",
-                imageLink: "https://cdn.jattpendu.com/thumbmed/48976373.jpg",
+                name: "Saari Duniya Jalaa Denge",
+                audioLink: "https://raag.fm/files/mp3/128/Hindi-Singles/25817/Saari%20Duniya%20Jalaa%20Denge%20-%20(Raag.Fm).mp3",
+                source: "Raag",
+                imageLink: "https://i.ytimg.com/vi/nOF5G0oxlww/hqdefault.jpg",
                 date: new Date()
             },
             {
-                name: "Satranga (From ANIMAL)",
-                audioLink: "https://cdn.jattpendu.com/download/128k-wslce/Satranga-(From-ANIMAL).mp3",
-                source: "pendu jaat",
-                imageLink: "https://cdn.jattpendu.com/thumbmed/49272942.jpg",
+                name: "The Hanuman Song",
+                audioLink: "https://raag.fm/files/mp3/128/Hindi-Singles/25563/The%20Hanuman%20-%20(Raag.Fm).mp3",
+                source: "Raag",
+                imageLink: "https://www.pagalvvorld.com/wp-content/uploads/2023/10/The-Hanuman-mp3-image-300x300.jpg",
                 date: new Date()
             },
             {
                 name: "Tu Hai Kahan",
-                audioLink: "https://www.pagalworldl.com/files/download/id/22945",
+                audioLink: "https://raag.fm/files/mp3/128/Hindi-Singles/25544/Tu%20Hai%20Kahan%20-%20(Raag.Fm).mp3",
                 source: "Pagal world",
-                imageLink: "https://www.pagalworldl.com/uploads/thumb/sft46/22945_4.jpg",
+                imageLink: "https://i.ytimg.com/vi/AX6OrbgS8lI/maxresdefault.jpg",
                 date: new Date()
             },
         ],

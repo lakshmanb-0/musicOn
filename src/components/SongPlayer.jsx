@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Image, Slider } from 'antd'
 import { StepBackwardOutlined, StepForwardOutlined, PlayCircleOutlined, PauseCircleOutlined } from '@ant-design/icons'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { randomSelectSong } from '../redux/reducers/reducers'
 
 export const SongPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false)
     const audioRef = useRef(null)
+    const dispatch = useDispatch()
     const [currentTime, setCurrentTime] = useState(audioRef?.current?.currentTime)
     const { currentSong } = useSelector(state => state.data)
 
@@ -17,6 +19,12 @@ export const SongPlayer = () => {
         }
         setIsPlaying(!isPlaying);
     };
+    useEffect(() => {
+        if (audioRef?.current) {
+            audioRef.current.play();
+            setIsPlaying(true)
+        }
+    }, [currentSong])
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -69,11 +77,11 @@ export const SongPlayer = () => {
                     />
                     <p>{currentSong?.name}</p>
                 </div>
-                <div className='flex gap-3 text-2xl'>
-                    <StepBackwardOutlined />
+                {<div className='flex gap-3 text-2xl'>
+                    <StepBackwardOutlined onClick={() => dispatch(randomSelectSong())} />
                     <button onClick={handlePlayPause}>{isPlaying ? <PauseCircleOutlined /> : <PlayCircleOutlined />}</button>
-                    <StepForwardOutlined />
-                </div>
+                    <StepForwardOutlined onClick={() => dispatch(randomSelectSong())} />
+                </div>}
             </section>
         </>
     )

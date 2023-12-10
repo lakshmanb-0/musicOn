@@ -93,7 +93,7 @@ export const Register = () => {
     }
     return (
         <Spin spinning={loading}>
-            <div className='max-w-[400px] mx-auto h-[100vh] grid place-items-center'>
+            {/* <div className='max-w-[400px] mx-auto h-[100vh] grid place-items-center'>
                 <div>
                     {!otp ?
                         <>
@@ -111,7 +111,7 @@ export const Register = () => {
                             <button className='text-center w-full underline text-sm' onClick={reset}>Use another number</button>
                         </>}
                 </div>
-            </div>
+            </div> */}
         </Spin>
     )
 }

@@ -24,15 +24,19 @@ const authSlice = createSlice({
             state.songList = [...state.songList, action.payload]
         },
         deleteSong: (state, action) => {
-            state.songList = state.songList.filter(el => el?.link == action.payload);
+            state.songList = state.songList.filter(el => el?.imageLink != action.payload);
             state.currentSong = state.currentSong.imageLink == action.payload ? {} : state.currentSong
         },
         setCurrentSong: (state, action) => {
             state.currentSong = action.payload
+        },
+        randomSelectSong: (state) => {
+            const randomIndex = Math.floor(Math.random() * state.songList.length);
+            state.currentSong = state.songList[randomIndex];
         }
     },
 })
 
-export const { tokenCookie, logOut, addSong, setCurrentSong, deleteSong } = authSlice.actions
+export const { tokenCookie, logOut, addSong, setCurrentSong, deleteSong, randomSelectSong } = authSlice.actions
 
 export default authSlice.reducer

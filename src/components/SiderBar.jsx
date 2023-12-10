@@ -4,8 +4,10 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { logOut } from '../redux/reducers/reducers';
 import { useNavigate } from 'react-router-dom';
+import Sider from 'antd/es/layout/Sider';
 
-export const Sider = () => {
+
+export const SiderBar = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
