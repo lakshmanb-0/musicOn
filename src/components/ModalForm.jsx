@@ -6,13 +6,17 @@ import { addSong } from '../redux/reducers/reducers';
 export const ModalForm = ({ isModalOpen, setIsModalOpen }) => {
     const dispatch = useDispatch()
     const { songList } = useSelector(state => state.data)
+    const [form] = Form.useForm();
+
     console.log(songList);
     const handleOk = (values) => {
         dispatch(addSong({ ...values, date: new Date() }))
+        form.resetFields();
         setIsModalOpen(false);
     };
 
     const handleCancel = () => {
+        form.resetFields();
         setIsModalOpen(false);
     };
 
@@ -28,6 +32,7 @@ export const ModalForm = ({ isModalOpen, setIsModalOpen }) => {
                 initialValues={{ remember: true }}
                 onFinish={handleOk}
                 autoComplete="off"
+                form={form}
             >
                 <Divider />
                 <Form.Item
@@ -39,7 +44,7 @@ export const ModalForm = ({ isModalOpen, setIsModalOpen }) => {
                 </Form.Item>
                 <Form.Item
                     name="audioLink"
-                    label="Link"
+                    label="Audio Link"
                     rules={[{ required: true, message: 'Please input your song Link!' }]}
                 >
                     <Input placeholder='Song link' />
@@ -50,12 +55,12 @@ export const ModalForm = ({ isModalOpen, setIsModalOpen }) => {
                     label="Source"
                     rules={[{ required: true, message: 'Please input your Source!' }]}
                 >
-                    <Input placeholder='Song Name' />
+                    <Input placeholder='Source' />
                 </Form.Item>
 
                 <Form.Item
                     name="imageLink"
-                    label="Image"
+                    label="Image Link"
                     rules={[{ required: true, message: 'Please input your Image Link!' }]}
                 >
                     <Input placeholder='Image Link' />
